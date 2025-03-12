@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Lista</ion-title>
+    <ion-button slot="end">
+      <ion-icon name="calendar-number-outline" slot="start"></ion-icon>
+      Calendario
+    </ion-button>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  <ion-list>
+    <ion-item button *ngFor="let alumno of alumnos;let index">
+    <ion-avatar slot="start">
+        <img [src]="'https://picsum.photos/80/80?random=' + index" alt="Foto" />
+    </ion-avatar>
+
+    <ion-label class="ion-text-wrap">
+      <p><span>{{ alumno.apellido }}</span>, <span>{{ alumno.nombre }}</span></p>
+    </ion-label>
+    <ion-button color="warning"><ion-icon name="pencil"></ion-icon></ion-button>
+    <ion-button color="warning"><ion-icon name="book-outline"></ion-icon></ion-button>
+    <ion-button color="warning"><ion-icon name="bulb-outline"></ion-icon></ion-button>
+    </ion-item>
+</ion-list>
+</ion-content>
